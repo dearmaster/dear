@@ -44,7 +44,7 @@
     <build>
         <finalName>dearmaster</finalName>
 
-        <resources>
+        <!--<resources>
             <resource>
                 <directory>${basedir}/src/main/resources</directory>
             </resource>
@@ -52,7 +52,7 @@
                 <directory>${project.build.directory}/generated-resources</directory>
                 <filtering>true</filtering>
             </resource>
-        </resources>
+        </resources>-->
 
         <plugins>
             <plugin>
@@ -102,8 +102,7 @@
                         </goals>
                         <phase>generate-resources</phase>
                         <configuration>
-                            <outputDirectory>${project.build.directory}/generated-resources</outputDirectory>
-                            <includeArtifacIds>deardb</includeArtifacIds>
+                            <outputDirectory>${project.build.directory}/classes</outputDirectory>
                             <includeGroupIds>${project.groupId}</includeGroupIds>
                             <excludeTransitive>true</excludeTransitive>
                             <!--use as much as needed to be specific...also scope,type,classifier etc-->
