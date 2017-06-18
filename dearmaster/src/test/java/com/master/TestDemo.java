@@ -19,7 +19,7 @@ import java.util.List;
 @Transactional
 @Rollback(false)
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:/dataSource.xml")
+@ContextConfiguration("classpath:/applicationContext.xml")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestDemo {
 

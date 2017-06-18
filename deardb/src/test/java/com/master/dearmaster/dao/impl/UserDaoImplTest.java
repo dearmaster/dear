@@ -2,6 +2,7 @@ package com.master.dearmaster.dao.impl;
 
 import com.master.dearmaster.dao.UserDao;
 import com.master.dearmaster.model.User;
+import com.master.dearmaster.util.DateHelper;
 import com.master.dearmaster.util.LoggerFactory;
 import org.apache.log4j.Logger;
 import org.junit.After;
@@ -16,9 +17,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Transactional
@@ -35,18 +33,7 @@ public class UserDaoImplTest {
 
     @Before
     public void setUp() throws Exception {
-        user = new User("lucy", "Lucy Xu", "女", "Shanghai", "lucy.xu@eduoer.com", "15028382321", getDate("1990-05-20"));
-    }
-
-    private Date getDate(String date) {
-        Date parseRst = null;
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            parseRst = sdf.parse(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return parseRst;
+        user = new User("lucy", "Lucy Xu", "女", "Shanghai", "lucy.xu@eduoer.com", "15028382321", DateHelper.parseStripingSeparateDateString("1990-05-20"));
     }
 
     @After
