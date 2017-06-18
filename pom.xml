@@ -8,7 +8,6 @@
     <modules>
         <module>dearmaster</module>
         <module>deardb</module>
-        <module>dearservice</module>
     </modules>
     <packaging>pom</packaging>
 
