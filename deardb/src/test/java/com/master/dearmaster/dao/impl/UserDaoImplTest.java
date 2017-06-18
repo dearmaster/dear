@@ -31,7 +31,7 @@ public class UserDaoImplTest {
     @Autowired
     private UserDao userDao;
     private User user;
-    private static final Logger logger = LoggerFactory.getLogger(UserDaoImplTest.class);
+    private static final Logger logger = LoggerFactory.getLogger();
 
     @Before
     public void setUp() throws Exception {

@@ -25,7 +25,7 @@ public class TestDemo {
 
     @Autowired
     private UserDao userDao;
-    private static final Logger logger = LoggerFactory.getLogger(TestDemo.class);
+    private static final Logger logger = LoggerFactory.getLogger();
 
     @Test
     public void test2FindAll() throws Exception {
