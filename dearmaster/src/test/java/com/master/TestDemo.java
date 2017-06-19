@@ -1,12 +1,9 @@
-package com.master.dearmaster.dao.impl;
+package com.master;
 
 import com.master.dearmaster.dao.UserDao;
 import com.master.dearmaster.model.User;
-import com.master.dearmaster.util.DateHelper;
 import com.master.dearmaster.util.LoggerFactory;
 import org.apache.log4j.Logger;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,24 +19,13 @@ import java.util.List;
 @Transactional
 @Rollback(false)
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:/dataSource.xml")
+@ContextConfiguration("classpath:/applicationContext.xml")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class UserDaoImplTest {
+public class TestDemo {
 
     @Autowired
     private UserDao userDao;
-    private User user;
     private static final Logger logger = LoggerFactory.getLogger();
-
-    @Before
-    public void setUp() throws Exception {
-        user = new User("lucy", "Lucy Xu", "女", "Shanghai", "lucy.xu@eduoer.com", "15028382321", DateHelper.parseStripingSeparateDateString("1990-05-20"));
-    }
-
-    @After
-    public void tearDown() throws Exception {
-
-    }
 
     @Test
     public void test2FindAll() throws Exception {
@@ -48,21 +34,6 @@ public class UserDaoImplTest {
         for(User user: users) {
             System.out.println(user);
         }
-    }
-
-    @Test
-    public void test1Save() throws Exception {
-        userDao.save(user);
-    }
-
-    @Test
-    public void test4Delete() throws Exception {
-        logger.info("test");
-    }
-
-    @Test
-    public void test3Update() throws Exception {
-
     }
 
 }
