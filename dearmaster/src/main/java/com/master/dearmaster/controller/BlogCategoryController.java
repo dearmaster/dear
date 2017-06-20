@@ -38,13 +38,13 @@ public class BlogCategoryController {
         return list;
     }*/
 
-    @RequestMapping(method = GET, value = "load/{blogowner}")
+    @RequestMapping(method = GET, value = "load/{blogOwner}")
     @ResponseBody
-    public List<BlogCategory> findAll(HttpSession session, @PathVariable String blogowner) {
+    public List<BlogCategory> findAll(HttpSession session, @PathVariable String blogOwner) {
 
         if(logger.isDebugEnabled()) {
             String loginId = (String) session.getAttribute(SESSION_LOGIN_USER);
-            logger.debug(loginId + " is querying the list of blog categories of " + blogowner);
+            logger.debug(loginId + " is querying the list of blog categories of " + blogOwner);
         }
 
         List<BlogCategory> list = mockupAll();
