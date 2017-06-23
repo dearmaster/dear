@@ -21,4 +21,12 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/**"/>
+            <bean class="com.master.dearmaster.interceptor.AuthorizationHandlerInterceptorAdapter"/>
+        </mvc:interceptor>
+        <bean class="com.master.dearmaster.interceptor.ResourceHandlerInterceptorAdapter"/>
+    </mvc:interceptors>
+
 </beans>

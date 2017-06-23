@@ -1,12 +1,13 @@
 package com.master.dearmaster.dao;
 
+import java.io.Serializable;
 import java.util.List;
 
-public interface BaseDao<T> {
+public interface BaseDao {
 
-    List<T> findAll();
-    void save(T t);
-    void delete(T t);
-    void update(T t);
+    <T> List<T> findAll();
+    <T> Serializable save(T t);
+    <T> void delete(T t);
+    <T> void update(T t);
 
 }

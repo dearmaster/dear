@@ -37,25 +37,5 @@
     <script src="<%= ctx%>/js/bootstrap.js"></script>
     <script src="<%= ctx%>/controller/BlogController.js"></script>
 
-    <script>
-        var app = angular.module('myApp', []);
-        app.controller('myCtrl', function($scope, $http) {
-            $scope.firstName = "John";
-            $scope.lastName = "Doe";
-
-            var actionUrl = 'mvc/user/load';
-
-            $http.get(actionUrl)
-                    .then(function(response) {
-                        console.log('111111');
-                        if(response.data!=null && response.data.length > 0) {
-                            $scope.hasModels = true;
-                            console.log('$scope.hasModels = true');
-                            $scope.clients = response.data;
-                        }
-                    });
-
-        });
-    </script>
 </body>
 </html>

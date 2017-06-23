@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository("userDao")
-public class UserDaoImpl extends AbstractBaseDaoSupport<User> implements UserDao {
+public class UserDaoImpl extends AbstractBaseDaoSupport implements UserDao {
 
     public List<User> findAll() {
         return super.findAll(User.class);
